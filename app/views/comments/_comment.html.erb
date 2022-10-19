@@ -10,9 +10,15 @@
 </p>
 
   <p>
-    <%= link_to "Destroy Comment", [comment.article, comment], data: {
+<%= link_to "Destroy Comment", [comment.article, comment], data: {
                   turbo_method: :delete,
                   turbo_confirm: "Are you sure?"
                 } %>
   </p>
+
+ <%= # button_to "Delete Comment"[@article, comment], method: :delete %>
+ <%= # puts @article.inspect %>
+
+
+
 <% end %>
