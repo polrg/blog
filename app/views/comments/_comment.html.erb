@@ -9,6 +9,13 @@
     <%= comment.body %>
 </p>
 
+<p>
+    <strong>Comment_Id:</strong>
+    <%= comment.id %>
+    <strong>Comment_path:</strong>
+    <%= article_comment_path(@article, comment) %>
+</p>
+
   <p>
 <%= link_to "Destroy Comment", [comment.article, comment], data: {
                   turbo_method: :delete,
@@ -16,9 +23,30 @@
                 } %>
   </p>
 
- <%# =button_to "Delete Comment"[@article, comment], method: :delete %>
-<%#= @article.inspect %>
-<%#= debug @article %>
-<%= debug @article.id %>
+ <%= button_to "Delete Comment", article_comment_path(@article, comment), method: :delete %>
+
+<hr>
+    <%# = @article.inspect %>  <!--   funkar   -->
+    <%# = debug @article %>    <!--  funkar   -->
+   <%# = @article %>           <!--  funkar ej  -->
+   <%# = article %>            <!--  funkar ej  -->
+
+    <%# = debug comment %>     <!--  funkar   -->
+    <%# = debug @comment %>    <!--  funkar ej  -->
+
+
+    <%# = article_path(@article)    samma som    = article_path %>       <!--  funkar    /articles/2/  -->
+    <%# = articles_path                                                  <!--  funkar    /articles  -->
+    <%# = article_comments_path(@article, comment) %>                    <!--  funkar    /articles/2/comments/8    --> 
+    <%# = article_comments_path(@article) %>                             <!--  funkar    /articles/2/comments    -->       
+
+    <%# = article_comment_path(@article) %>                              <!--  funkar ej   /articles/2/comments/2  för alla, saknas 1 parameter  -->   
+
+    <%# = article_comments %>                                           <!--  funkar ej  -->
+    <%# = article_comments(@article) %>                                 <!--  funkar ej  -->
+    <%# = article_comment %>                                            <!--  funkar ej  -->
+    <%# = article_comment(@article) %>                                  <!--  funkar ej  -->
+
+  
 
 <% end %>
