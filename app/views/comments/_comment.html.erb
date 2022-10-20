@@ -9,19 +9,16 @@
     <%= comment.body %>
 </p>
 
+<%
+=begin %>
 <p>
     <strong>Comment_Id:</strong>
     <%= comment.id %>
     <strong>Comment_path:</strong>
     <%= article_comment_path(@article, comment) %>
 </p>
-
-  <p>
-<%= link_to "Destroy Comment", [comment.article, comment], data: {
-                  turbo_method: :delete,
-                  turbo_confirm: "Are you sure?"
-                } %>
-  </p>
+<%
+=end %>
 
  <%= button_to "Delete Comment", article_comment_path(@article, comment), method: :delete %>
 
