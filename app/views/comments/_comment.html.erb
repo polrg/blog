@@ -23,13 +23,18 @@
  <%= button_to "Delete Comment", article_comment_path(@article, comment), method: :delete %>
 
 <hr>
+
+
     <%# = @article.inspect %>  <!--   funkar   -->
     <%# = debug @article %>    <!--  funkar   -->
    <%# = @article %>           <!--  funkar ej  -->
+   <%# = debug article %>      <!--  funkar ej  -->
    <%# = article %>            <!--  funkar ej  -->
+                                <!--  article funkar ej  -->
 
     <%# = debug comment %>     <!--  funkar   -->
-    <%# = debug @comment %>    <!--  funkar ej  -->
+    <%# = comment.inspect %>   <!--  funkar   -->
+                                <!--  @comment funkar ej  -->
 
 
     <%# = article_path(@article)    samma som    = article_path %>       <!--  funkar    /articles/2/  -->
